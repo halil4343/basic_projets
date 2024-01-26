@@ -1,0 +1,36 @@
+import os 
+import shutil
+
+class Classifier():
+    def __init__(self):
+        download_folder = "C:/Users/Ozerh/Downloads"
+    
+    def _list(download_folder):
+        exe_files = "C:/Users/Ozerh/Desktop/classified downloads/exe files"
+        pdf_files = "C:/Users/Ozerh/Desktop/classified downloads/pdf files"
+        zip_files = "C:/Users/Ozerh/Desktop/classified downloads/zip files"
+        images = "C:/Users/Ozerh/Desktop/classified downloads/media/images"
+        videos = "C:/Users/Ozerh/Desktop/classified downloads/media/videos"
+        audios = "C:/Users/Ozerh/Desktop/classified downloads/media/audios"
+        others = "C:/Users/Ozerh/Desktop/classified downloads/other folders"
+        files = os.listdir(download_folder)
+        for file in files:
+            source_path = os.path.join(download_folder, file)
+            
+            if file[-3:]  in  ["msi", "App", "exe"]:
+                shutil.move(source_path,exe_files)
+            elif file[-3:] in ["png","jpg","jpeg","ico"]:
+                shutil.move(source_path,images)
+            elif file[-3:] == "zip":
+                shutil.move(source_path,zip_files)
+            elif file[-3:] == "pdf":
+                shutil.move(source_path,pdf_files)
+            elif file[-3:] == "mp4":
+                shutil.move(source_path,videos)
+            elif file[-3:] == "mp3":
+                shutil.move(source_path,audios)
+            else:
+                shutil.move(source_path,others)
+        print(len(files) , "files moved")
+     
+Classifier._list(download_folder="C:/Users/Ozerh/Downloads")
