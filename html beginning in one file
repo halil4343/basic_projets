@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="halil">
+    <meta name="description" content="this web site is about the files that i wrote in the beginning of my HTML, CSS learning">
+    <title>Beginning in one file</title>
+    <link rel="stylesheet" href="html_beginning/beginning_one_file.css">
+    <script src="https://kit.fontawesome.com/54ccef6139.js" crossorigin="anonymous"></script>
+</head>
+<body>
+<div class="head">
+<h2>Beginning Works in One Page</h2>
+    </div>
+<div class="description">
+    <p class="p1">This site contains the works that I wrote while learning </p>
+    <p class="p2">You can access them with the links below⬇️</p>
+</div>
+<div class="container">
+    <div>    <i class="fa-solid fa-feather"></i>
+<a href="html_beginning/html/htmlForCss/animations.html">animations</a></div>
+    <div>    <i class="fa-solid fa-feather"></i>
+<a href="html_beginning/html/htmlForCss/backgroundImages.html">background images</a></div>
+    <div>    <i class="fa-solid fa-feather"></i>
+<a href="html_beginning/html/htmlForCss/BorderAndMargin.html">border and margin</a></div>
+    <div>    <i class="fa-solid fa-feather"></i>
+<a href="html_beginning/html/htmlForCss/combinators.html">combinators</a></div>
+    <div>    <i class="fa-solid fa-feather"></i>
+<a href="html_beginning/html/htmlForCss/display.html">display</a></div>
+    <div>    <i class="fa-solid fa-feather"></i>
+<a href="html_beginning/html/htmlForCss/dropdownMenus.html">dropdown menus</a></div>
+    <div>    <i class="fa-solid fa-feather"></i>
+<a href="html_beginning/html/htmlForCss/flexbox.html">flexbox</a></div>
+    <div>    <i class="fa-solid fa-feather"></i>
+<a href="html_beginning/html/htmlForCss/float.html">float</a></div>
+    <div>    <i class="fa-solid fa-feather"></i>
+<a href="html_beginning/html/htmlForCss/fontAndColor.html">font and color</a></div>
+    <div>    <i class="fa-solid fa-feather"></i>
+<a href="html_beginning/html/htmlForCss/heightAndWidth.html">height and width</a></div>
+    <div>    <i class="fa-solid fa-feather"></i>
+<a href="html_beginning/html/htmlForCss/nav.html">nav</a></div>
+    <div>    <i class="fa-solid fa-feather"></i>
+<a href="html_beginning/html/htmlForCss/overflow">overflow</a></div>
+    <div>    <i class="fa-solid fa-feather"></i>
+<a href="html_beginning/html/htmlForCss/pagination.html">pagination</a></div>
+    <div>    <i class="fa-solid fa-feather"></i>
+<a href="html_beginning/html/htmlForCss/positions.html">positions</a></div>
+    <div>    <i class="fa-solid fa-feather"></i>
+<a href="html_beginning/html/htmlForCss/pseudo.html">pseudo</a></div>
+    <div>    <i class="fa-solid fa-feather"></i>
+<a href="html_beginning/html/htmlForCss/transformations.html">transformations</a></div>
+</div>
+</body>
+</html>
