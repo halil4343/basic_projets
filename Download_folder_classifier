@@ -1,21 +1,37 @@
 import os 
 import shutil
 
+desktop_path = "C:/Users/Ozerh/Desktop"
+download_folder_path = "C:/Users/Ozerh/Downloads"
+
+
 class Classifier():
-    def __init__(self):
-        download_folder = "C:/Users/Ozerh/Downloads"
-    
-    def _list(download_folder):
-        exe_files = "C:/Users/Ozerh/Desktop/classified downloads/exe files"
-        pdf_files = "C:/Users/Ozerh/Desktop/classified downloads/pdf files"
-        zip_files = "C:/Users/Ozerh/Desktop/classified downloads/zip files"
-        images = "C:/Users/Ozerh/Desktop/classified downloads/media/images"
-        videos = "C:/Users/Ozerh/Desktop/classified downloads/media/videos"
-        audios = "C:/Users/Ozerh/Desktop/classified downloads/media/audios"
-        others = "C:/Users/Ozerh/Desktop/classified downloads/other folders"
-        files = os.listdir(download_folder)
+    def __init__(self,download_folder,where_to_create):
+        self.download_folder = download_folder
+        self.where_to_create = where_to_create
+        self.folder = os.path.join(where_to_create, "classified downloads")
+        self.create_classified_downloads()
+        self._list()
+    def create_classified_downloads(self):
+        if not os.path.exists(self.folder):
+            os.makedirs(self.folder)
+            os.makedirs()
+        else:
+            print("the file already has been created")
+        
+            
+    def _list(self):
+        
+        exe_files = os.path.join(self.folder, "exe files")
+        pdf_files = os.path.join(self.folder, "pdf files")
+        zip_files = os.path.join(self.folder, "zip files")
+        images = os.path.join(self.folder, "media", "images")
+        videos = os.path.join(self.folder, "media", "videos")
+        audios = os.path.join(self.folder, "media", "audios")
+        others = os.path.join(self.folder, "others")
+        files = os.listdir(self.download_folder)
         for file in files:
-            source_path = os.path.join(download_folder, file)
+            source_path = os.path.join(self.download_folder, file)
             
             if file[-3:]  in  ["msi", "App", "exe"]:
                 shutil.move(source_path,exe_files)
@@ -31,6 +47,7 @@ class Classifier():
                 shutil.move(source_path,audios)
             else:
                 shutil.move(source_path,others)
+            
+        
         print(len(files) , "files moved")
-     
-Classifier._list(download_folder="C:/Users/Ozerh/Downloads")
+Classifier(download_folder=download_folder_path,where_to_create=desktop_path)
