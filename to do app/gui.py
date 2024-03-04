@@ -1,15 +1,38 @@
 from tkinter import *
+path = "C:/Users/Ozerh/Desktop/basic_projets/tasks.txt"
+tasks = []
 
-def addTask1(task):
-    task1 = Checkbutton(fr1, text=task, width=300, background="aqua", command=lambda: delete(task1))
-    task1.pack()
-    with open("tasks.txt", "a") as file:
-        file.write(task + "\n")
+def delete_text_from_file(text_to_delete):
+    text_to_delete = text_to_delete + "\n"
+    # Read the contents of the file
+    with open("tasks.txt", "r") as file:
+        lines = file.readlines()
 
-def delete(widget):
-    widget.destroy()
+    # Remove lines containing the specified text
+    modified_lines = [line for line in lines if text_to_delete not in line]
 
-def addTask2():
+    # Write the modified contents back to the file
+    with open("tasks.txt", "w") as file:
+        file.writelines(modified_lines)
+
+def delete_task(task_widget,text_to_delete):
+    tasks.remove(text_to_delete)
+    delete_text_from_file(text_to_delete)
+    task_widget.destroy()
+    update_task_file()
+
+def update_task_file():
+    with open("tasks.txt", "w") as file:
+        for task in tasks:
+            file.write(task + "\n")
+
+def add_task1(task):
+    tasks.append(task)
+    task_widget = Checkbutton(fr1, text=task, command=lambda: delete_task(task_widget, task))
+    task_widget.pack()
+    update_task_file()
+
+def add_task2():
     top = Toplevel(window)
     top.geometry("300x200+545+250")
 
@@ -21,19 +44,19 @@ def addTask2():
 
     def add_task():
         task = entry.get()
-        addTask1(task)
+        add_task1(task)
         top.destroy()
 
     ok_button = Button(top, text="Ok", command=add_task)
     ok_button.pack(side=BOTTOM)
 
-try:
-    with open("tasks.txt", "r") as file:
-        tasks = file.readlines()
-        for task in tasks:
-            addTask1(task.strip())  # Strip whitespace and newline characters
-except FileNotFoundError:
-    pass
+def load_tasks():
+    try:
+        with open("tasks.txt", "r") as file:
+            for task in file:
+                add_task1(task.strip())
+    except FileNotFoundError:
+        pass
 
 window = Tk()
 window.title("To Do")
@@ -48,7 +71,9 @@ fr2.pack(side=BOTTOM)
 label1 = Label(fr1, text="To Do List")
 label1.pack()
 
-add_button = Button(fr2, text="Add Task", command=addTask2)
+add_button = Button(fr2, text="Add Task", command=add_task2)
 add_button.pack()
+
+load_tasks()
 
 window.mainloop()
