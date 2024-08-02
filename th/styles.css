@@ -1,0 +1,112 @@
+/* Base Styles */
+body {
+    font-family: 'Poppins', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #fbc2eb 0%, #3d74f4 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: #007BFF;
+    font-weight: bold;
+}
+
+.container {
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    max-width: 400px;
+    width: 100%;
+}
+
+h1 {
+    margin: 0;
+    color: #007BFF;
+    font-size: 2.5em;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+p {
+    font-size: 1.1em;
+}
+
+input[type="number"] {
+    width: calc(100% - 22px);
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 2px solid #007BFF;
+    border-radius: 8px;
+    box-sizing: border-box;
+    font-size: 1em;
+    transition: border-color 0.3s ease;
+}
+
+input[type="number"]:focus {
+    border-color: #0056b3;
+    outline: none;
+}
+
+button {
+    background: linear-gradient(135deg, #007BFF, #0056b3);
+    color: #fff;
+    border: none;
+    padding: 12px 25px;
+    cursor: pointer;
+    border-radius: 8px;
+    font-size: 1.1em;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+    background: linear-gradient(135deg, #0056b3, #003d80);
+    transform: scale(1.05);
+}
+
+button:disabled {
+    background: #cccccc;
+    cursor: not-allowed;
+}
+
+#feedback,
+#currentGuess,
+#score,
+#highScore {
+    margin-top: 15px;
+    font-size: 1.1em;
+    color: #401963;
+    border: 2px solid #007BFF;
+    padding: 10px;
+    border-radius: 8px;
+    background: #eaf4ff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    
+}
+#score{
+    color: #007BFF;
+    font-weight: bold;
+
+}
+#currentGuess span {
+    font-weight: bold;
+    color: #007BFF;
+}
+
+#resetGame {
+    background: #e74c3c;
+    display: inline-block;
+    margin-top: 20px;
+}
+
+#resetGame:hover {
+    background: #2aff4a;
+}
+
+#feedback {
+    color: #007BFF;
+    font-weight: bold;
+
+}
